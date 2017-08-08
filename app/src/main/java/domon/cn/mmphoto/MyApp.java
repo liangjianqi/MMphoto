@@ -3,6 +3,9 @@ package domon.cn.mmphoto;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
+
 /**
  * Created by Domon on 2017/8/8.
  */
@@ -25,5 +28,7 @@ public class MyApp extends Application {
         super.onCreate();
         mInstance = this;
         mContext = getApplicationContext();
+
+        Logger.addLogAdapter(new AndroidLogAdapter());
     }
 }
