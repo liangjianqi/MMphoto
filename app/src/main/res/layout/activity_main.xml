@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,13 +7,69 @@
     android:layout_height="match_parent"
     tools:context="domon.cn.mmphoto.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <FrameLayout
+        android:id="@+id/container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-</android.support.constraint.ConstraintLayout>
+    <com.yinglan.alphatabs.AlphaTabsIndicator
+        android:id="@+id/alphaIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3f3"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/main_atv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+
+            app:badgeBackgroundColor="#eee"
+            app:paddingTexwithIcon="8dp"
+            app:tabIconNormal="@mipmap/ic_launcher"
+            app:tabIconSelected="@mipmap/ic_launcher"
+            app:tabText="One"
+            app:tabTextSize="20sp"
+            app:textColorNormal="#fff"
+            app:textColorSelected="#0ee"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/categroy_atv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+
+            app:badgeBackgroundColor="#eee"
+            app:paddingTexwithIcon="8dp"
+            app:tabIconNormal="@mipmap/ic_launcher"
+            app:tabIconSelected="@mipmap/ic_launcher"
+            app:tabText="Two"
+            app:tabTextSize="20sp"
+            app:textColorNormal="#fff"
+            app:textColorSelected="#0ee"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/profile_atv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+
+            app:badgeBackgroundColor="#eee"
+            app:paddingTexwithIcon="8dp"
+            app:tabIconNormal="@mipmap/ic_launcher"
+            app:tabIconSelected="@mipmap/ic_launcher"
+            app:tabText="Three"
+            app:tabTextSize="20sp"
+            app:textColorNormal="#fff"
+            app:textColorSelected="#0ee"/>
+
+    </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+</RelativeLayout>
