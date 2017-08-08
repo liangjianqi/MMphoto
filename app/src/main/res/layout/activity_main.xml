@@ -15,9 +15,9 @@
     <com.yinglan.alphatabs.AlphaTabsIndicator
         android:id="@+id/alphaIndicator"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="#3f3"
+        android:background="#f8f8f8"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp">
@@ -31,12 +31,12 @@
 
             app:badgeBackgroundColor="#eee"
             app:paddingTexwithIcon="8dp"
-            app:tabIconNormal="@mipmap/ic_launcher"
-            app:tabIconSelected="@mipmap/ic_launcher"
-            app:tabText="One"
-            app:tabTextSize="20sp"
-            app:textColorNormal="#fff"
-            app:textColorSelected="#0ee"/>
+            app:tabIconNormal="@mipmap/icon_table_unhome"
+            app:tabIconSelected="@mipmap/icon_table_home"
+            app:tabText="推荐"
+            app:tabTextSize="16sp"
+            app:textColorNormal="#cccccc"
+            app:textColorSelected="#ff3168"/>
 
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/categroy_atv"
@@ -47,12 +47,12 @@
 
             app:badgeBackgroundColor="#eee"
             app:paddingTexwithIcon="8dp"
-            app:tabIconNormal="@mipmap/ic_launcher"
-            app:tabIconSelected="@mipmap/ic_launcher"
-            app:tabText="Two"
-            app:tabTextSize="20sp"
-            app:textColorNormal="#fff"
-            app:textColorSelected="#0ee"/>
+            app:tabIconNormal="@mipmap/icon_table_unclassify"
+            app:tabIconSelected="@mipmap/icon_table_classify"
+            app:tabText="分类"
+            app:tabTextSize="16sp"
+            app:textColorNormal="#cccccc"
+            app:textColorSelected="#ff3168"/>
 
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/profile_atv"
@@ -61,14 +61,14 @@
             android:layout_weight="1"
             android:padding="5dp"
 
-            app:badgeBackgroundColor="#eee"
+            app:badgeBackgroundColor="#e43030"
             app:paddingTexwithIcon="8dp"
-            app:tabIconNormal="@mipmap/ic_launcher"
-            app:tabIconSelected="@mipmap/ic_launcher"
-            app:tabText="Three"
-            app:tabTextSize="20sp"
-            app:textColorNormal="#fff"
-            app:textColorSelected="#0ee"/>
+            app:tabIconNormal="@mipmap/icon_table_unshopingcar"
+            app:tabIconSelected="@mipmap/icon_table_shopingcar"
+            app:tabText="我的"
+            app:tabTextSize="16sp"
+            app:textColorNormal="#cccccc"
+            app:textColorSelected="#ff3168"/>
 
     </com.yinglan.alphatabs.AlphaTabsIndicator>
 

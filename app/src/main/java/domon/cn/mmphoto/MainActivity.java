@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.orhanobut.logger.Logger;
 import com.yinglan.alphatabs.AlphaTabView;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
@@ -38,14 +37,13 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(int tabNum) {
                 switch (tabNum){
                     case 0:
-                        Toast.makeText(getApplicationContext(),"one",Toast.LENGTH_SHORT).show();
-                        Logger.e("one");
+                        Toast.makeText(getApplicationContext(),"推荐",Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"two",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"分类",Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"three",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"我的",Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
