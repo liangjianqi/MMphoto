@@ -1,14 +1,374 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white"
               android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_gravity="center"
-        android:text="Fuck "
-        android:textSize="30sp"/>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="90.0dip"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:background="@color/color_ff3366"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="@color/white"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/userLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="110.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/mine_title_bg"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/user_profile"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10.0dip"
+                android:gravity="center_vertical"
+                android:src="@mipmap/icon_user_head"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10.0dip"
+                android:layout_toRightOf="@+id/user_profile"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="100.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:textColor="@color/color_333333"
+                        android:textSize="18.0sp"/>
+
+                    <TextView
+                        android:id="@+id/openVip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10.0dip"
+                        android:background="@drawable/mine_vip_bg"
+                        android:gravity="right"
+                        android:paddingBottom="5.0dip"
+                        android:paddingLeft="15.0dip"
+                        android:paddingRight="15.0dip"
+                        android:paddingTop="5.0dip"
+                        android:text="打赏"
+                        android:textColor="@color/white"
+                        android:textSize="16.0sp"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/Android_20dp"
+            android:layout_marginRight="@dimen/Android_20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/buyGoldCoinsLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/buyGoldCoinsImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/icon_income"/>
+
+                <TextView
+                    android:id="@+id/buyGoldCoinsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_13dp"
+                    android:layout_toRightOf="@id/buyGoldCoinsImg"
+                    android:text="购买金币"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <TextView
+                    android:id="@+id/goldBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@id/buyGoldCoinsText"
+                    android:textColor="@color/color_ff3366"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+
+            <RelativeLayout
+                android:id="@+id/openMemberLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/openMemberImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/icon_account"/>
+
+                <TextView
+                    android:id="@+id/memberMarkText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_13dp"
+                    android:layout_toRightOf="@+id/openMemberImg"
+                    android:text="开通会员"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <TextView
+                    android:id="@+id/memberMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@+id/memberMarkText"
+                    android:text="未开通"
+                    android:textColor="@color/color_ff3366"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+
+            <RelativeLayout
+                android:id="@+id/selfActivationLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/selfActivation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/self_activation"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@id/selfActivation"
+                    android:text="自助激活"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+
+            <RelativeLayout
+                android:id="@+id/boutiqueRecommendation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/boutiqueImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/boutique"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@id/boutiqueImg"
+                    android:text="精品推荐"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+
+            <RelativeLayout
+                android:id="@+id/mySettingsLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/mine_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/mine_set"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@id/mine_set"
+                    android:text="设置"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+
+            <RelativeLayout
+                android:id="@+id/myCustomerLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/Android_5dp"
+                android:layout_marginTop="@dimen/Android_10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/customer_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/customer_qq"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Android_10dp"
+                    android:layout_toRightOf="@id/customer_set"
+                    android:text="客服"
+                    android:textColor="@color/color_676767"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/Android_10dp"
+                    app:srcCompat="@mipmap/icon_mine_right"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/Android_1dp"
+                android:layout_marginLeft="@dimen/Android_35dp"
+                android:background="@color/color_f0f0f0"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
