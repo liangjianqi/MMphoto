@@ -7,11 +7,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import domon.cn.mmphoto.MyApp;
 import domon.cn.mmphoto.R;
+import domon.cn.mmphoto.utils.BannerImageLoader;
 
 /**
  * Created by Domon on 2017/8/9.
@@ -21,6 +30,8 @@ public class HomeFragment extends Fragment implements HomeContract.View {
 
     @BindView(R.id.title_mid_tv)
     TextView mTitleTv;
+    @BindView(R.id.home_banner)
+    Banner mBanner;
 
     private Unbinder mUnbinder;
 
@@ -45,6 +56,25 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         mUnbinder = ButterKnife.bind(this, view);
 
         mTitleTv.setText("推荐");
+
+        //banner test start
+        final List<String> images = new ArrayList<>();
+        images.add(0, "http://zer.sistershsmy.com/MTUzOQ15391539/0718/1500350147.jpg");
+        images.add(1, "http://zer.sistershsmy.com/MTcxNQ17151715/0706/1499321422.png");
+        images.add(2, "http://zer.sistershsmy.com/MTcyMA17201720/0705/1499228376.jpg");
+
+
+        mBanner.setImageLoader(new BannerImageLoader());
+        mBanner.setImages(images);
+        mBanner.start();
+
+        mBanner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Toast.makeText(MyApp.getAppContext(), images.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
+        //banner test end
 
         return view;
     }

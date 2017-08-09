@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         unbind = ButterKnife.bind(this);
 
-        //todo checkupdate
-
         mProfileAlphaTabView.showNumber(10);
 
         mAlphaTabsIndicator.setOnTabChangedListner(new OnTabChangedListner() {
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         switchFragment(HomeFragment.class);
                         break;
                     case 1:
-                        //todo add fragment replace
                         Toast.makeText(getApplicationContext(), "分类", Toast.LENGTH_SHORT).show();
                         switchFragment(CategoryFragment.class);
                         break;
