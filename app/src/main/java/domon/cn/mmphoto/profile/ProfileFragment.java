@@ -6,7 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import domon.cn.mmphoto.R;
 
 /**
@@ -14,6 +18,11 @@ import domon.cn.mmphoto.R;
  */
 
 public class ProfileFragment extends Fragment {
+    @BindView(R.id.title_mid_tv)
+    TextView mTitleTv;
+
+
+    private Unbinder mUnbinder;
 
 
     public static ProfileFragment newInstance() {
@@ -33,6 +42,16 @@ public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        mUnbinder = ButterKnife.bind(this, view);
+
+
+        return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mUnbinder.unbind();
     }
 }

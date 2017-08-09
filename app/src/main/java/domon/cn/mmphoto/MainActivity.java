@@ -18,6 +18,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import domon.cn.mmphoto.category.CategoryFragment;
+import domon.cn.mmphoto.home.HomeFragment;
 import domon.cn.mmphoto.profile.ProfileFragment;
 import domon.cn.mmphoto.utils.FragmentUtils;
 
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager mFragmentManager;
     private Fragment mCurrentFragment;
 
-    private ProfileFragment mProfileFragment;
     private Unbinder unbind;
 
     @Override
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         unbind = ButterKnife.bind(this);
 
         //todo checkupdate
-        initFragment(savedInstanceState);
 
         mProfileAlphaTabView.showNumber(10);
 
@@ -60,11 +60,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (tabNum) {
                     case 0:
                         Toast.makeText(getApplicationContext(), "推荐", Toast.LENGTH_SHORT).show();
-                        switchFragment(Fragment.class);
+                        switchFragment(HomeFragment.class);
                         break;
                     case 1:
                         //todo add fragment replace
                         Toast.makeText(getApplicationContext(), "分类", Toast.LENGTH_SHORT).show();
+                        switchFragment(CategoryFragment.class);
                         break;
                     case 2:
                         Toast.makeText(getApplicationContext(), "我的", Toast.LENGTH_SHORT).show();
@@ -76,11 +77,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mAlphaTabsIndicator.setTabCurrenItem(0);
+        initFragment(savedInstanceState);
     }
 
     /**
      * use FragmentUtils to create new fragment.
+     *
      * @param savedInstanceState
      */
     private void initFragment(Bundle savedInstanceState) {
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         mCurrentFragment = (Fragment) mFragmentManager.findFragmentById(R.id.container_fl);
 
         if (mCurrentFragment == null) {
-            mCurrentFragment = FragmentUtils.createFragment(Fragment.class);
+            mCurrentFragment = FragmentUtils.createFragment(HomeFragment.class);
             mFragmentManager.beginTransaction().add(R.id.container_fl, mCurrentFragment).commit();
         }
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * switch current fragment.
+     *
      * @param clazz
      */
     private void switchFragment(Class<?> clazz) {
