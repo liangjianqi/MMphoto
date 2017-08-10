@@ -38,7 +38,7 @@ dependencies {
     compile 'com.yinglan.alphatabs:library:1.0.8'
     compile 'com.youth.banner:banner:1.4.9'
     compile 'com.github.chrisbanes:PhotoView:2.1.3'
-
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.27'
 
 //    compile ('com.alibaba.android:vlayout:1.0.9@aar') {
 //        transitive = true
